@@ -16,9 +16,15 @@
 <body>
 	<div class="container">
   		<h2>Muestra y datos del autor de la foto</h2>
-	  	<h3>Autor: <?php echo " ".$item["Muestra"]['usuario']; ?></h3>
-	  	<h3>Fecha: <?php print_r($item["Muestra"]['fecha']->toDateTime()->format('d-m-Y')); ?></h3>
+	  	<h3>Autor: </h3><h5> <?= " ".$author ?></h5>
+	  	<h3>Institución </h3><h5> <?= " ".$institucion ?></h5>
+	  	<h3>Estación </h3><h5> <?= " ".$estacion?></h5>
+	  	<h3>Fecha:</h3><h5><?=$date ?></h5>
+	  	<br><br>
+	  	<a href="http://maps.google.com/maps?q=loc:<?= $location['lat'].','.$location['lng'];?>"><span class="glyphicon glyphicon-map-marker">  </span>Ver ubicación en el mapa</a>
+
 		<br><br>
+
 		<h2>Datos obligatorios</h2>
 	  	<table class="table">
 		    <thead>

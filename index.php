@@ -6,11 +6,11 @@
     $query=conectarBD()->findOne(array());
     $identifier=iterator_to_array($query)['_id'];
     // creates file, final two params are pixel and frame
-	QRcode::png("http://192.168.0.103/Proyectos/Web-Projects%20Generals/Qr%20generator/author.php?objid=$identifier", 'qr_objid.png',QR_ECLEVEL_L, 2, 2);  
+	QRcode::png("http://192.168.43.8/Proyectos/Web-Projects%20Generals/Qr%20generator/author.php?objid=$identifier", 'qr_objid.png',QR_ECLEVEL_L, 2, 2);  
 
 
 	$stamp = imagecreatefrompng('qr_objid.png');
-	$im = imagecreatefromjpeg('foto_objid.jpg');
+	$im = imagecreatefromjpeg('6.jpg');
  	
 	// Set the margins for the stamp and get the height/width of the stamp image
 	$imx = imagesx($im);
@@ -57,8 +57,8 @@
 		//Base datos
 		try {
 	        $connection = new MongoDB\Client;
-	        $bd = 'MonitoreoAgua';
-	        $collection='puntosMuestreo';
+	        $bd = 'PuntosMuestreo';
+	        $collection='DatosCurri';
 	        $database = $connection->$bd;
 	        $collection = $database->$collection;
 	    } catch (MongoConnectionException $e) {
